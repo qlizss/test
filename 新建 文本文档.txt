@@ -1,0 +1,17 @@
+extrn MessageBoxA: proc
+
+.data
+text db 'hello wordfsdfl导航大夫d', 0
+caption db 'selpn First x64 Application', 0 
+
+.code
+WinMain proc
+sub rsp,28h
+xor r9d,r9d
+lea r8, caption
+lea rdx, text
+xor rcx,rcx
+call MessageBoxA
+add rsp,28h
+WinMain ENDP
+END
